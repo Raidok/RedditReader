@@ -22,8 +22,7 @@ public class CommandModule {
    }
    
    public void call(String location, String command, BufferedReader in) {
-      String[] commands = command.split(" ");
-      Command cmd = commandGroups.get(location).get(commands[0]);
+      Command cmd = commandGroups.get(location).get(command);
       if (cmd != null) {
          cmd.execute(in);
       } else {
