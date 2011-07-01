@@ -21,9 +21,10 @@ public class CommandModule {
    }
    
    public void call(String location, String command) {
-      Command cmd = commandGroups.get(location).get(command.split(" ")[0]);
+      String[] commands = command.split(" ");
+      Command cmd = commandGroups.get(location).get(commands[0]);
       if (cmd != null) {
-         cmd.execute(command.substring(command.indexOf(" ")));
+         cmd.execute(commands.length > 1 ? command.substring(command.indexOf(" ")) : "");
       } else {
          new UnknownCommand().execute("");
       }
