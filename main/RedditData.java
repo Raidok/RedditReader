@@ -101,10 +101,10 @@ public class RedditData {
       private boolean is_serif;
       private String permalink; // URL?
       private String name;
-      private Double created;
+      private double created;
       private String url; // URL?
       private String title;
-      private Double created_utc;
+      private double created_utc;
       private int num_comments;
       private int ups;
       
@@ -234,10 +234,10 @@ public class RedditData {
       public void setName(String name) {
          this.name = name;
       }
-      public Double getCreated() {
+      public double getCreated() {
          return created;
       }
-      public void setCreated(Double created) {
+      public void setCreated(double created) {
          this.created = created;
       }
       public String getUrl() {
@@ -252,10 +252,10 @@ public class RedditData {
       public void setTitle(String title) {
          this.title = title;
       }
-      public Double getCreated_utc() {
+      public double getCreated_utc() {
          return created_utc;
       }
-      public void setCreated_utc(Double created_utc) {
+      public void setCreated_utc(double created_utc) {
          this.created_utc = created_utc;
       }
       public int getNum_comments() {
