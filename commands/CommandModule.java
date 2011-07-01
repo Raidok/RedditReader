@@ -22,7 +22,7 @@ public class CommandModule {
    }
    
    public void call(String location, String command, BufferedReader in) {
-      Command cmd = commandGroups.get(location).get(command);
+      Command cmd = commandGroups.get(location).get(command.toLowerCase());
       if (cmd != null) {
          cmd.execute(in);
       } else {

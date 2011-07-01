@@ -3,6 +3,8 @@ package commands;
 import java.io.BufferedReader;
 import java.io.IOException;
 
+import main.Main;
+import main.RedditData.Data;
 import main.View;
 
 /**
@@ -16,7 +18,10 @@ public class ViewTopic extends Command {
       try {
          System.out.print("Choose topic: ");
          topic = in.readLine();
-         View.posts(topic, 10, "");
+         Data data = View.getData(topic, 10, "");
+         Main.setTopic(topic);
+         Main.setData(data);
+         View.posts(data, 0);
       } catch (IOException e) {
          e.printStackTrace();
       }

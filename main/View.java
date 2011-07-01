@@ -16,15 +16,13 @@ public class View {
    private View() {
    }
 
-   public static void posts(String topic, int count, String after) throws IOException {
-      Data data = getData(topic, count, after);
+   public static void posts(Data data, int offset) {
       for (int i = 0; i < data.getChildren().size(); i++) {
-         System.out.println(i+1 + ". " + data.getChildren().get(i).getData().getTitle().replace("\n", ""));
-         after = data.getAfter();
+         System.out.println(offset+i+1 + ". " + data.getChildren().get(i).getData().getTitle().replace("\n", ""));
       }
    }
 
-   private static Data getData(String topic, int count, String after) {
+   public static Data getData(String topic, int count, String after) {
       Gson gson = new Gson();
       RedditData reddit = null;
       String additional = "";
