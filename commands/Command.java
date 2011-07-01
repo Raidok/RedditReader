@@ -1,9 +1,11 @@
 package commands;
 
+import java.io.BufferedReader;
+
 /**
  * @author raido
  */
 public abstract class Command {
    
-   public abstract void execute(String extra);
+   public abstract void execute(BufferedReader in);
 }

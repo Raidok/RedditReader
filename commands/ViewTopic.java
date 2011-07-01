@@ -1,5 +1,6 @@
 package commands;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 
 import main.View;
@@ -10,9 +11,12 @@ import main.View;
 public class ViewTopic extends Command {
 
    @Override
-   public void execute(String extra) {
+   public void execute(BufferedReader in) {
+      String topic = null;
       try {
-         View.posts(extra, 10, "");
+         System.out.print("Choose topic: ");
+         topic = in.readLine();
+         View.posts(topic, 10, "");
       } catch (IOException e) {
          e.printStackTrace();
       }

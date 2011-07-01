@@ -15,6 +15,7 @@ public class Main {
    private String location = "titles";
    private BufferedReader in;
    private CommandModule commandModule;
+   
 
    public static void main(String[] args)  {
       new Main();
@@ -33,7 +34,7 @@ public class Main {
       System.out.println(">> ");
       try {
          if (!"".equals(command = in.readLine()))
-         commandModule.call(location, command);
+         commandModule.call(location, command, in);
       } catch (IOException e) {
          e.printStackTrace();
       }

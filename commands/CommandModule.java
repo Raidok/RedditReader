@@ -1,5 +1,6 @@
 package commands;
 
+import java.io.BufferedReader;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,13 +21,13 @@ public class CommandModule {
       commandGroups.put("titles", titlesViewCommands);
    }
    
-   public void call(String location, String command) {
+   public void call(String location, String command, BufferedReader in) {
       String[] commands = command.split(" ");
       Command cmd = commandGroups.get(location).get(commands[0]);
       if (cmd != null) {
-         cmd.execute(commands.length > 1 ? command.substring(command.indexOf(" ")) : "");
+         cmd.execute(in);
       } else {
-         new UnknownCommand().execute("");
+         new UnknownCommand().execute(in);
       }
    }
 }
