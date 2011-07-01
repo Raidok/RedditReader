@@ -6,6 +6,7 @@ import java.net.URL;
 
 import com.google.gson.Gson;
 
+import main.RedditData.ChildData;
 import main.RedditData.Data;
 
 /**
@@ -16,6 +17,14 @@ public class View {
    private View() {
    }
 
+   public static void singlePost(ChildData data) {
+      System.out.println("TITLE: " + data.getTitle());
+      if (data.getSelftext().length() > 0) {
+         System.out.println(data.getSelftext());
+      }
+      System.out.println("LINK: " + data.getUrl());
+   }
+   
    public static void posts(Data data, int offset) {
       for (int i = 0; i < data.getChildren().size(); i++) {
          System.out.println(offset+i+1 + ". " + data.getChildren().get(i).getData().getTitle().replace("\n", ""));

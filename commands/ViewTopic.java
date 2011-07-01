@@ -13,11 +13,12 @@ import main.View;
 public class ViewTopic extends Command {
 
    @Override
-   public void execute(BufferedReader in, String param) {
-      String topic = null;
+   public void execute(BufferedReader in, String topic) {
       try {
-         System.out.print("Choose topic: ");
-         topic = in.readLine();
+         if ("".equals(topic)) {
+            System.out.print("Choose topic: ");
+            topic = in.readLine();
+         }
          Data data = View.getData(topic, 10, "");
          Main.setTopic(topic);
          Main.setData(data);

@@ -17,16 +17,15 @@ public class CommandModule {
       Map<String, Command> titlesViewCommands = new HashMap<String, Command>();
       titlesViewCommands.put("read", new ViewTopic());
       titlesViewCommands.put("next", new TopicsContinue());
-      titlesViewCommands.put("get", new TopicsContinue());
+      titlesViewCommands.put("get", new GetPost());
       
       commandGroups.put("titles", titlesViewCommands);
    }
    
    public void call(String location, String command, BufferedReader in) {
-      Command cmd = commandGroups.get(location).get(command.toLowerCase());
+      Command cmd = commandGroups.get(location).get(command.toLowerCase().split(" ")[0].trim());
       if (cmd != null) {
-         
-         cmd.execute(in, command.split(" ").length > 1 ? command.substring(command.indexOf(" ")) : "");
+         cmd.execute(in, command.split(" ").length > 1 ? command.substring(command.indexOf(" ")).trim() : "");
       } else {
          new UnknownCommand().execute(in, "");
       }
