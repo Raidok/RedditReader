@@ -8,7 +8,7 @@ import java.io.BufferedReader;
 public class UnknownCommand extends Command {
 
    @Override
-   public void execute(BufferedReader in) {
+   public void execute(BufferedReader in, String param) {
       System.out.println("No such command!");
    }
 }

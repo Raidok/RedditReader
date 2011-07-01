@@ -7,5 +7,5 @@ import java.io.BufferedReader;
  */
 public abstract class Command {
    
-   public abstract void execute(BufferedReader in);
+   public abstract void execute(BufferedReader in, String param);
 }

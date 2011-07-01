@@ -12,7 +12,7 @@ import main.RedditData.Data;
 public class TopicsContinue extends Command {
 
    @Override
-   public void execute(BufferedReader in) {
+   public void execute(BufferedReader in, String param) {
       String after = Main.getData().getAfter();
       Data data = View.getData(Main.getTopic(), 10, after);
       Main.addData(data);

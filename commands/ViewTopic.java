@@ -13,7 +13,7 @@ import main.View;
 public class ViewTopic extends Command {
 
    @Override
-   public void execute(BufferedReader in) {
+   public void execute(BufferedReader in, String param) {
       String topic = null;
       try {
          System.out.print("Choose topic: ");
