@@ -19,7 +19,7 @@ public class ViewTopic extends Command {
             System.out.print("Choose topic: ");
             topic = in.readLine();
          }
-         Data data = View.getData(topic, 10, "");
+         Data data = View.getPosts(topic, 10, "");
          Main.setTopic(topic);
          Main.setData(data);
          View.posts(data, 0);
