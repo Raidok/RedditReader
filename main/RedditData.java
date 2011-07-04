@@ -107,6 +107,8 @@ public class RedditData {
       private double created_utc;
       private int num_comments;
       private int ups;
+      private String body;
+      private RedditData replies;
       
       public String getDomain() {
          return domain;
@@ -269,6 +271,18 @@ public class RedditData {
       }
       public void setUps(int ups) {
          this.ups = ups;
+      }
+      public void setReplies(RedditData replies) {
+         this.replies = replies;
+      }
+      public RedditData getReplies() {
+         return replies;
+      }
+      public void setBody(String body) {
+         this.body = body;
+      }
+      public String getBody() {
+         return body;
       }
    }
 
