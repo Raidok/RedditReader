@@ -95,14 +95,14 @@ public class RedditData {
       private int score;
       private boolean over_18;
       private boolean hidden;
-      private String thumbnail; // URL?
+      private String thumbnail;
       private String subreddit_id;
       private int downs;
       private boolean is_serif;
-      private String permalink; // URL?
+      private String permalink;
       private String name;
       private double created;
-      private String url; // URL?
+      private String url;
       private String title;
       private double created_utc;
       private int num_comments;
@@ -300,10 +300,10 @@ public class RedditData {
 
    public static class OEmbed {
       
-      private String provider_url; // URL?
+      private String provider_url;
       private String description;
       private String title;
-      private String url; // URL?
+      private String url;
       private String author_name;
       private int height;
       private int width;
