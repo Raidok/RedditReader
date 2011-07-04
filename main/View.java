@@ -26,8 +26,10 @@ public class View {
    }
    
    public static void posts(Data data, int offset) {
+      ChildData child = null;
       for (int i = 0; i < data.getChildren().size(); i++) {
-         System.out.println(offset+i+1 + ". " + data.getChildren().get(i).getData().getTitle().replace("\n", ""));
+         child = data.getChildren().get(i).getData();
+         System.out.println(offset+i+1 + ". " + child.getTitle().replace("\n", "") + " (" + child.getDomain() + ")");
       }
    }
 
