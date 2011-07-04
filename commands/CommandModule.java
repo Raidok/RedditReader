@@ -18,6 +18,7 @@ public class CommandModule {
       titlesViewCommands.put("read", new ViewTopic());
       titlesViewCommands.put("next", new TopicsContinue());
       titlesViewCommands.put("get", new GetPost());
+      titlesViewCommands.put("comments", new GetComments());
       
       commandGroups.put("titles", titlesViewCommands);
    }
